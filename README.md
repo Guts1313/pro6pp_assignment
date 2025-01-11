@@ -35,13 +35,22 @@ This repository demonstrates a small coding assignment aimed at quickly and clea
 
 ## Running the Application
 
-1. **Run Flask**
+## Data File Download
+Instead of storing a large CSV file within this repository, I have provided a **WeTransfer** download link to retrieve the dataset I used for the assignment:
+**Download Link**: [https://we.tl/t-okPhOal1DH](https://we.tl/t-okPhOal1DH)  
+(Expires according to WeTransfer’s standard policy.)
+1. **Download** the ZIP/CSV from the link.
+2. **Place** the file (e.g., `addresses.csv`) in the `df_files/` folder of this project.  
+   - You can also provide **any other CSV** you wish to use instead  , as long as it matches the schema the app expects (e.g., columns for `city` and `street`).
+   - **If NO CSV file is provided in the df_files dir** then the app will load the lazy_df from **addresses.parquet** - polar file created from the addresses.csv upon previous app launches. 
+3. **Run Flask**
    ```bash
    python app.py
    ```
    By default, the server will be available at [http://127.0.0.1:5000/](http://127.0.0.1:5000/).
 
-2. **Example Request**
+
+4.**Example Request**
    - **Get addresses for “Madrid”**:
      ```
      GET /addresses?city=Madrid
@@ -59,7 +68,7 @@ This repository demonstrates a small coding assignment aimed at quickly and clea
      }
      ```
 
-3. **Potential Errors**
+5. **Potential Errors**
    - **No `city` parameter** → 400 Bad Request.
    - **City not found** → 404 Not Found.
    - **CSV missing or read error** → 500 Internal Server Error.
