@@ -1,6 +1,11 @@
+import sys
+
 import pytest
 import polars as pl
 import os
+
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+
 from data_manager import DataManager
 
 @pytest.fixture

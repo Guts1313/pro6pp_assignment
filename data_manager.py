@@ -71,5 +71,5 @@ class DataManager:
         return (
             lazy_df
             .filter(pl.col("city").str.to_lowercase() == city_name.lower())
-            .collect(engine="gpu")  # or remove engine="gpu" if we don't want to use latest polars GPU engine
+            .collect()  # or remove engine="gpu" if we don't want to use latest polars GPU engine
         )

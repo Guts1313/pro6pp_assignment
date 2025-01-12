@@ -5,9 +5,14 @@ name = "pypi"
 
 [packages]
 pytest = "*"
+polars = "*"
+flask = "*"
 
 [dev-packages]
+pytest = "*"
+exceptiongroup = "*"
+polars = "*"
 
 [requires]
-python_version = "3.13"
-python_full_version = "3.13.1"
+python_version = "3.9"
+python_full_version = "3.9"
