@@ -35,6 +35,7 @@ This repository demonstrates a small coding assignment aimed at quickly and clea
 
 ## Running the Application
 
+
 ## Data File Download
 Instead of storing a large CSV file within this repository, I have provided a **WeTransfer** download link to retrieve the dataset I used for the assignment:
 **Download Link**: [https://we.tl/t-okPhOal1DH](https://we.tl/t-okPhOal1DH)  
@@ -43,14 +44,19 @@ Instead of storing a large CSV file within this repository, I have provided a **
 2. **Place** the file (e.g., `addresses.csv`) in the `df_files/` folder of this project.  
    - You can also provide **any other CSV** you wish to use instead  , as long as it matches the schema the app expects (e.g., columns for `city` and `street`).
    - **If NO CSV file is provided in the df_files dir** then the app will load the lazy_df from **addresses.parquet** - polar file created from the addresses.csv upon previous app launches. 
-3. **Run Flask**
+3. **Install** **Polars** in the environment using this command and version 
+   ```bash
+   $ pip install polars[gpu] -U --extra-index-url=https://pypi.nvidia.com
+   ```
+
+5. **Run Flask**
    ```bash
    python app.py
    ```
    By default, the server will be available at [http://127.0.0.1:5000/](http://127.0.0.1:5000/).
 
 
-4.**Example Request**
+5.**Example Request**
    - **Get addresses for “Madrid”**:
      ```
      GET /addresses?city=Madrid
